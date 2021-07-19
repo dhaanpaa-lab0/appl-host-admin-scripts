@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+echo "ZZZ"
 mkdir -pv /platform/work/has
 git clone https://github.com/dhaanpaa-lab0/appl-host-admin-scripts /platform/work/has
 rm -rf /platform/syman/bin
