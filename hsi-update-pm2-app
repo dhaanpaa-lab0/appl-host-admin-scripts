@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+if [ -d /platform/sites/$1/.git ]; then
+  cd /platform/sites/$1
+  REM_GIT_HOST=`git config --get remote.origin.url`
+  cd /platform/sites
+  rm -rf /platform/sites/$1
+  git clone $REM_GIT_HOST /platform/sites/$1
+  cd /platform/sites/$1
+  npm install 
+  npm run build
+  pm2 restart $1
+fi

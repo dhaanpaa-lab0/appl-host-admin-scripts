@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+sudo apt-get update && sudo apt-get install nginx
+sudo ufw allow 'Nginx Full'
+sudo ufw status
+sudo systemctl status nginx
+sudo curl http://localhost:80
+sudo setfacl -R -d -m u:denadmin:rwx /etc/nginx
+sudo setfacl -R -m u:denadmin:rwx /etc/nginx
+
+sudo setfacl -R -d -m g:denplatform:rwx /etc/nginx
+sudo setfacl -R -m g:denplatform:rwx /etc/nginx
