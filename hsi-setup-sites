@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+mkdir -pv /platform/sites
+setfacl -R -d -m u:denadmin:rwx /platform/sites
+setfacl -R -m u:denamdin:rwx /platform/sites
+setfacl -R -d -m g:denplatform:rwx /platform/sites
+setfacl -R -m g:denplatform:rwx /platform/sites
+sudo npm install -g pm2
+
