@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
-echo "ZZZ"
-mkdir -pv /platform/work/has
-git clone https://github.com/dhaanpaa-lab0/appl-host-admin-scripts /platform/work/has
-rm -rf /platform/syman/bin
-cd /platform/syman
-ln -s /platform/work/has bin
+if [ ! -d /platform/work/has ]; then
+  mkdir -pv /platform/work/has
+  git clone https://github.com/dhaanpaa-lab0/appl-host-admin-scripts /platform/work/has
+  rm -rf /platform/syman/bin
+  cd /platform/syman
+  ln -s /platform/work/has bin
+else
+  cd /platform/work/has
+  git pull
+fi
 
