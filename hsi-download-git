@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+if [ -d /platform/sites/$1/.git ]; then
+  cd /platform/sites/$1
+  git pull
+  
+else
+  git clone $2 /platform/sites/$1
+fi
+
+setfacl -R -d -m u:denadmin:rwx /platform/sites/$1
+setfacl -R -m u:denadmin:rwx /platform/sites/$1
+setfacl -R -d -m g:denplatform:rwx /platform/sites/$1
+setfacl -R -m g:denplatform:rwx /platform/sites/$1
