@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-sudo add-apt-repository ppa:certbot/certbot
-sudo apt-get update
-sudo apt install python-certbot-nginx
+sudo snap install core; sudo snap refresh core
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+
 sudo ufw allow 'Nginx Full'
 
