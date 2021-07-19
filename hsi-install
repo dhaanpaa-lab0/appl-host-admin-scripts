@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 mkdir /platform/work/has
-git clone https://github.com/dhaanpaa-lab0/appl-host-admin-scripts -O /platform/work/has
+git clone https://github.com/dhaanpaa-lab0/appl-host-admin-scripts /platform/work/has
 rm -rf /platform/syman/bin
 cd /platform/syman
 ln -s /platform/work/has bin
