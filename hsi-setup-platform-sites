@@ -5,4 +5,4 @@ setfacl -R -m u:denadmin:rwx /platform/sites
 setfacl -R -d -m g:denplatform:rwx /platform/sites
 setfacl -R -m g:denplatform:rwx /platform/sites
 sudo npm install -g pm2
-
+pm2 startup systemd

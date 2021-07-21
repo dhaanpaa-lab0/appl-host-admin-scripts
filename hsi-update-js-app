@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [ -d /platform/sites/$1/.git ]; then
+  cd /platform/sites/$1
+  git pull
+  npm install 
+  npm run build
+  pm2 restart $1
+fi
